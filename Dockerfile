@@ -1,8 +1,8 @@
-FROM openjdk:8-jdk-alpine
+FROM eclipse-temurin:17-jre-alpine
 VOLUME /tmp
 
-ARG JAR_FILE
-ADD target/spring-boot-hello-world-1.0.0-SNAPSHOT.jar app.jar
+ARG JAR_FILE=target/spring-boot-hello-world-1.0.0-SNAPSHOT.jar
+COPY ${JAR_FILE} app.jar
 
 ENV JAR_OPTS=""
 ENV JAVA_OPTS=""
