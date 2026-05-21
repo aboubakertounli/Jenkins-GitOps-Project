@@ -25,7 +25,7 @@ public class HelloWorldIntegrationTest {
     @Test
     @SuppressWarnings({ "rawtypes", "unchecked" })
     public void responseShouldContainHelloWorldKey() {
-        String url = "http://localhost:" + port + "/";
+        String url = "http://localhost:" + port + "/api/hello";
 
         ResponseEntity<Map> response = template.getForEntity(url, Map.class);
         Map<String, String> result = response.getBody();
